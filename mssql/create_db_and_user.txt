@@ -1,0 +1,7 @@
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Sql2019isfast -Q "CREATE DATABASE maxdb80 ON ( NAME = maxdb80, FILENAME = '/var/opt/mssql/data/maxdb80.mdf', SIZE = 500MB, MAXSIZE = UNLIMITED, FILEGROWTH = 1MB ) LOG ON ( NAME = maxdb80_log, FILENAME = '/var/opt/mssql/data/maxdb80.ldf', SIZE = 500MB, MAXSIZE = UNLIMITED, FILEGROWTH = 1MB )"
+
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Sql2019isfast -d maxdb80 -Q "sp_addlogin MAXIMO, Sql2019isfast "
+
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Sql2019isfast -d maxdb80 -Q "sp_changedbowner MAXIMO , GO "
+
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Sql2019isfast -d maxdb80 -Q " select FULLTEXTSERVICEPROPERTY ( 'IsFulltextInstalled' ) "

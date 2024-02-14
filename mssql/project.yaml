@@ -1,0 +1,6 @@
+apiVersion: project.openshift.io/v1
+description: "MS SQL with Full Text Search"
+displayName: mssqlfts2019
+kind: ProjectRequest
+metadata:
+    name: mssqlfts2019
