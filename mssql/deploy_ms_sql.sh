@@ -1,6 +1,4 @@
-oc create -f project.yaml
-
-oc project mssqlfts2019
+oc new-project mssqlfts2019
 
 oc create -f scc.yaml
 oc adm policy add-scc-to-group restrictedfsgroup system:serviceaccounts:mssql
