@@ -1,7 +1,7 @@
 oc new-project mssqlfts2019
 
 oc create -f scc.yaml
-oc adm policy add-scc-to-group restrictedfsgroup system:serviceaccounts:mssql
+oc adm policy add-scc-to-group restrictedfsgroup system:serviceaccounts:mssqlfts2019
 
 oc create secret generic mssql --from-literal=SA_PASSWORD="Sql2019isfast"
 
